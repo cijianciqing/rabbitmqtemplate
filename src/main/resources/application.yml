@@ -1,0 +1,30 @@
+####################################
+#              通用环境            #
+####################################
+
+spring:
+  # 环境配置
+  profiles:
+    active: dev
+
+  ####################################
+  #        spring通用配置1            #
+  ####################################
+  application:
+    #    设置此应用的名称
+    name: rabbitmqtemplate
+  #控制台输出设置
+  output:
+    ansi:
+      enabled: always
+
+  ####################################
+  #       TaskExecutionPool           #
+  ####################################
+  task:
+    execution:
+      pool:
+        max-size: 16
+        queue-capacity: 100
+        keep-alive: "10s"
+
