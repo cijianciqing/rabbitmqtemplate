@@ -40,11 +40,16 @@ public class CJSeniorConfirmProducer {
      * */
     @GetMapping("/sendMsgOptimize/{message}")
     public void sendMsgOptimize(@PathVariable String message){
-        log.info("当前时间： {},发送一条信息给两个 TTL 队列:{}", new Date(), message);
+        log.info("Senior Confirm当前时间： {},发送一条信息给两个 routing-key :{}", new Date(), message);
         //指定消息 id 为 1
         CorrelationData correlationData1=new CorrelationData("1");
 
+        CorrelationData correlationData2=new CorrelationData("2");
+
         rabbitTemplate.convertAndSend(CJSeniorConfirmConfig.CJ_SENIOR_CONFIRM_EXCHANGE_NAME,
                 CJSeniorConfirmConfig.CJ_SENIOR_CONFIRM_BINDING_KEY,message,correlationData1);
+
+        rabbitTemplate.convertAndSend(CJSeniorConfirmConfig.CJ_SENIOR_CONFIRM_EXCHANGE_NAME,
+                CJSeniorConfirmConfig.CJ_SENIOR_CONFIRM_BINDING_KEY+"bad",message,correlationData2);
     }
 }
