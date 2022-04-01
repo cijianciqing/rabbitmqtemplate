@@ -1,6 +1,7 @@
 package cj.springboot.template.rabbitmqtemplate.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.MessagePostProcessor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,5 +22,19 @@ public class CJDelayQueueProviderController {
     public void sendMsg(@PathVariable String message){log.info("当前时间： {},发送一条信息给两个 TTL 队列:{}", new Date(), message);
         rabbitTemplate.convertAndSend("X", "XA", "消息来自 ttl 为 10S 的队列: "+message);
         rabbitTemplate.convertAndSend("X", "XB", "消息来自 ttl 为 40S 的队列: "+message);
+    }
+
+    /*
+    * 7.6 延迟队列优化
+    * */
+    @GetMapping("/sendMsgOptimize/{message}/{ttl}")
+    public void sendMsgOptimize(@PathVariable String message,@PathVariable String ttl){
+        log.info("当前时间： {},发送一条信息给两个 TTL 队列:{}", new Date(), message);
+        rabbitTemplate.convertAndSend("X", "XC", "Produce设置ttl的消息: "+message, (messageP) ->{
+            //为每个消息设置
+            messageP.getMessageProperties().setExpiration(ttl);
+            return messageP;
+        });
+
     }
 }
