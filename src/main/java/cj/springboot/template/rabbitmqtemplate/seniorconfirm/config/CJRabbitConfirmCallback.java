@@ -1,4 +1,4 @@
-package cj.springboot.template.rabbitmqtemplate.seniorconfirm;
+package cj.springboot.template.rabbitmqtemplate.seniorconfirm.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.connection.CorrelationData;

@@ -34,6 +34,7 @@ spring:
     password: "123"
     #设置rabbit-server端，交换机进行发送确认【CORRELATED：发布消息成功到交换器后会触发回调方法】
     publisher-confirm-type: correlated
+    publisher-returns: true
 
 ####################################
 #          logback日志配置          #

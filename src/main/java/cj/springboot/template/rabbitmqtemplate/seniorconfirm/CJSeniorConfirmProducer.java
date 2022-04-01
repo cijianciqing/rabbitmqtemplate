@@ -1,5 +1,8 @@
 package cj.springboot.template.rabbitmqtemplate.seniorconfirm;
 
+import cj.springboot.template.rabbitmqtemplate.seniorconfirm.config.CJRabbitConfirmCallback;
+import cj.springboot.template.rabbitmqtemplate.seniorconfirm.config.CJRabbitConfirmReturnCallback;
+import cj.springboot.template.rabbitmqtemplate.seniorconfirm.config.CJSeniorConfirmConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -23,10 +26,13 @@ public class CJSeniorConfirmProducer {
 
     @Autowired
     private CJRabbitConfirmCallback cjRabbitConfirmCallback;
+    @Autowired
+    private CJRabbitConfirmReturnCallback cjRabbitConfirmReturnCallback;
     //依赖注入 rabbitTemplate 之后再设置它的回调对象
     @PostConstruct
     public void init(){
         rabbitTemplate.setConfirmCallback(cjRabbitConfirmCallback);
+        rabbitTemplate.setReturnCallback(cjRabbitConfirmReturnCallback);
     }
 
     /*
