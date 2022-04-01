@@ -25,8 +25,8 @@ public class CJDelayQueueProviderController {
     }
 
     /*
-    * 7.6 延迟队列优化
-    * */
+     * 7.6.1 延迟队列优化配置
+     * */
     @GetMapping("/sendMsgOptimize/{message}/{ttl}")
     public void sendMsgOptimize(@PathVariable String message,@PathVariable String ttl){
         log.info("当前时间： {},发送一条信息给两个 TTL 队列:{}", new Date(), message);

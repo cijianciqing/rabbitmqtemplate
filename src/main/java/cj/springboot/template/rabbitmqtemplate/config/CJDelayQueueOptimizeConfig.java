@@ -8,6 +8,9 @@ import org.springframework.context.annotation.Configuration;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+* 7.6.1 延迟队列优化配置
+* */
 @Configuration
 public class CJDelayQueueOptimizeConfig {
     public static final String X_EXCHANGE = "X";
