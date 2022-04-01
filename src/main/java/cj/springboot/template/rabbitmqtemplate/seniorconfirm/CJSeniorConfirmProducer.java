@@ -49,6 +49,7 @@ public class CJSeniorConfirmProducer {
         rabbitTemplate.convertAndSend(CJSeniorConfirmConfig.CJ_SENIOR_CONFIRM_EXCHANGE_NAME,
                 CJSeniorConfirmConfig.CJ_SENIOR_CONFIRM_BINDING_KEY,message,correlationData1);
 
+        //此次发送的消息 routingkey设置有问题， rabbit-server端的交换机没有对应的配置
         rabbitTemplate.convertAndSend(CJSeniorConfirmConfig.CJ_SENIOR_CONFIRM_EXCHANGE_NAME,
                 CJSeniorConfirmConfig.CJ_SENIOR_CONFIRM_BINDING_KEY+"bad",message,correlationData2);
     }
