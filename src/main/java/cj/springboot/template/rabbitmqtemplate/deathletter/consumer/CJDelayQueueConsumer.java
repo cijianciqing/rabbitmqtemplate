@@ -1,4 +1,4 @@
-package cj.springboot.template.rabbitmqtemplate.consumer;
+package cj.springboot.template.rabbitmqtemplate.deathletter.consumer;
 
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;

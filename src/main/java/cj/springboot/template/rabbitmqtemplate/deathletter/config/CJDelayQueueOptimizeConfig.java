@@ -1,4 +1,4 @@
-package cj.springboot.template.rabbitmqtemplate.config;
+package cj.springboot.template.rabbitmqtemplate.deathletter.config;
 
 import org.springframework.amqp.core.*;
 import org.springframework.beans.factory.annotation.Qualifier;
