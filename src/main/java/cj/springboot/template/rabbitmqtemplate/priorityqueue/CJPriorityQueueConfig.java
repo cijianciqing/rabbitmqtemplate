@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Slf4j
-@Configuration
+//@Configuration
 public class CJPriorityQueueConfig {
 
     public static final String CJ_PRIORITY_QUEUE_EXCHANGE_NAME = "cjpriorityqueue_exchange";

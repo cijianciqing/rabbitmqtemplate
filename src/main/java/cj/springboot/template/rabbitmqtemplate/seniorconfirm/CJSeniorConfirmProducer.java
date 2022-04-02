@@ -17,7 +17,7 @@ import java.util.Date;
 
 @Slf4j
 @RequestMapping("/seniorConfirm")
-@RestController
+//@RestController
 public class CJSeniorConfirmProducer {
 
 
