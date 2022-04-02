@@ -27,7 +27,13 @@ public class CJRabbitMQBasicProducer {
     public void sendMsg(@PathVariable String message) {
         log.info("CJRabbitMQBasicProducer发送一条信息: {}, 发送时间： {},", message, new Date());
 
-        rabbitTemplate.convertAndSend(CJRabbitMQBasicConfig.CJ_EXCHANGE_NAME,
+//        rabbitTemplate.convertAndSend(CJRabbitMQBasicConfig.CJ_EXCHANGE_NAME,
+//                CJRabbitMQBasicConfig.CJ_ROUTING_KEY, message);
+
+//        rabbitTemplate.convertAndSend(CJRabbitMQBasicConfig.CJ_FANOUT_EXCHANGE_NAME,
+//                CJRabbitMQBasicConfig.CJ_ROUTING_KEY, message);
+
+        rabbitTemplate.convertAndSend(CJRabbitMQBasicConfig.CJ_DIRECT_EXCHANGE_NAME,
                 CJRabbitMQBasicConfig.CJ_ROUTING_KEY, message);
     }
 }
