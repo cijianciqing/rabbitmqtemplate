@@ -11,7 +11,7 @@ import java.util.Date;
 
 
 @Slf4j
-@Component
+//@Component
 public class CJDelayQueueConsumer {
     @RabbitListener(queues = "QD")
     public void receiveD(Message message, Channel channel) throws IOException {

@@ -11,7 +11,7 @@ import java.util.Date;
 
 
 @Slf4j
-@Component
+//@Component
 public class CJRealDelayQueueConsumer {
 
     public static final String CJ_DELAY_EXCHANGE_NAME = "cj..rabbitmq.exchange.delay";

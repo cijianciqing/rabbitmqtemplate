@@ -12,7 +12,7 @@ import java.util.Date;
 
 
 @Slf4j
-@Component
+//@Component
 public class CJSeniorConfirmConsumer {
 
 

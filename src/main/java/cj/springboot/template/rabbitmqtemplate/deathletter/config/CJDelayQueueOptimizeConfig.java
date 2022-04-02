@@ -11,7 +11,7 @@ import java.util.Map;
 /*
 * 7.6.1 延迟队列优化配置
 * */
-@Configuration
+//@Configuration
 public class CJDelayQueueOptimizeConfig {
     public static final String X_EXCHANGE = "X";
     public static final String QUEUE_C = "QC";

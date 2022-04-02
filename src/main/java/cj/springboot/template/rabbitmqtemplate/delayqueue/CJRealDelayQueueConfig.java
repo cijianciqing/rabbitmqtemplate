@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.HashMap;
 import java.util.Map;
 
-@Configuration
+//@Configuration
 public class CJRealDelayQueueConfig {
     public static final String CJ_DELAY_EXCHANGE_NAME = "cj..rabbitmq.exchange.delay";
     public static final String CJ_DELAY_QUEUE_NAME = "cj.rabbitmq.queue.delay";

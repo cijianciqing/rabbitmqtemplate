@@ -8,7 +8,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@Component
+//@Component
 public class CJBackWarningConsumer {
     @RabbitListener(queues = CJBackExchangeConfig.CJ_SENIOR_CONFIRM_BACK_QUEUE_NAME)
     public void receiveBackMsg(Message message) {

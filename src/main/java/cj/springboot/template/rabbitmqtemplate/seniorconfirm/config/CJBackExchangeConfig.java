@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Slf4j
-@Configuration
+//@Configuration
 public class CJBackExchangeConfig {
     /*
      * Back Exchange config---start
